@@ -16,6 +16,17 @@
 #
 ## Решение:
 
+floor = 0
+code = File.read("data/1.txt").split
 
+code[0].each_char { |c|
+	if c == "("
+		floor += 1
+	elsif c == ")"
+		floor -= 1
+	else
+		puts "error"
+	end
+}
 
-
+puts floor
