@@ -16,4 +16,15 @@
 #
 ## Решение:
 
+paper_needed = 0
+sizes = File.readlines("data/4.txt")
 
+sizes.each { |c_gift|
+	gift = c_gift.strip.split("x").sort{|x| x.to_i}
+	length = gift[0].to_i
+	height = gift[1].to_i
+	width = gift[2].to_i
+	paper_needed += 3*length*height + 2*height*width + 2*length*width
+}
+
+puts paper_needed

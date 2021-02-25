@@ -10,4 +10,13 @@
 #
 ## Решение:
 
+code = 0
+guide = File.readlines("data/3.txt")
 
+guide.each { |c_row|
+	row = c_row.strip.split(/\t/)
+	code += row.max_by { |x| x.to_i }.to_i
+	code -= row.min_by { |x| x.to_i }.to_i
+}
+
+puts code

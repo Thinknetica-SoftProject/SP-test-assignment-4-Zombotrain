@@ -16,3 +16,17 @@
 #
 ## Решение:
 
+require 'digest'
+
+puts "Введите слово"
+user_input = gets.chomp
+number = 0
+
+begin
+	number += 1
+	word = user_input
+	word += number.to_s
+	hex = Digest::MD5.hexdigest word
+end until hex[0,5] == "00000"
+
+puts number
