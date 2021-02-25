@@ -18,7 +18,6 @@
 
 require 'digest'
 
-puts "Введите слово"
 user_input = gets.chomp
 number = 0
 
